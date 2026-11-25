@@ -1,0 +1,260 @@
+/* Estilos de web/src/demo/. Construidos sobre las variables de estilos/tokens.css.
+   Diseño primero para tablet en vertical (768px), luego escritorio y teléfono. */
+
+#pruebalo {
+  padding: var(--e-6) var(--e-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  font-family: var(--fuente);
+  color: var(--texto);
+}
+
+.pruebalo-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+}
+
+@media (min-width: 1000px) {
+  .pruebalo-panel {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .pruebalo-panel > * {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.color-verde {
+  color: var(--btn-verde);
+}
+
+.color-amarillo {
+  color: var(--btn-amarillo);
+}
+
+.color-rojo {
+  color: var(--btn-rojo);
+}
+
+/* --- Simulador --- */
+
+.simulador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-3);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.simulador-botones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--e-3);
+  width: 100%;
+}
+
+@media (min-width: 560px) {
+  .simulador-botones {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.simulador-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  min-height: 96px;
+  padding: var(--e-3) var(--e-2);
+  border-radius: var(--radio);
+  border: 2px solid var(--borde);
+  background: var(--superficie-alta);
+  font-family: var(--fuente);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+
+.simulador-boton:active {
+  transform: scale(0.97);
+}
+
+.simulador-boton.color-verde {
+  border-color: var(--btn-verde);
+}
+
+.simulador-boton.color-amarillo {
+  border-color: var(--btn-amarillo);
+}
+
+.simulador-boton.color-rojo {
+  border-color: var(--btn-rojo);
+}
+
+.simulador-led {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--superficie-alta);
+  border: 1px solid var(--borde);
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.simulador-led.activo.color-verde {
+  background: var(--btn-verde);
+  box-shadow: 0 0 18px var(--btn-verde);
+}
+
+.simulador-led.activo.color-amarillo {
+  background: var(--btn-amarillo);
+  box-shadow: 0 0 18px var(--btn-amarillo);
+}
+
+.simulador-led.activo.color-rojo {
+  background: var(--btn-rojo);
+  box-shadow: 0 0 18px var(--btn-rojo);
+}
+
+.simulador-aviso {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simulador-boton,
+  .simulador-led {
+    transition: none;
+  }
+
+  .simulador-boton:active {
+    transform: none;
+  }
+}
+
+/* --- Dashboard --- */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-3);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.dashboard-etiqueta-demo {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--e-1) var(--e-2);
+  margin: 0;
+}
+
+.dashboard-indice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-1);
+  text-align: center;
+}
+
+.dashboard-indice-numero {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--marca-degradado);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.dashboard-indice-etiqueta {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.dashboard-distribucion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-distribucion-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.dashboard-distribucion-item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dashboard-distribucion-valor,
+.dashboard-distribucion-porcentaje {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.dashboard-grafica {
+  width: 100%;
+  height: auto;
+}
+
+.dashboard-grafica-eje {
+  stroke: var(--borde);
+  stroke-width: 1;
+}
+
+.barra-satisfecho {
+  fill: var(--btn-verde);
+}
+
+.barra-neutral {
+  fill: var(--btn-amarillo);
+}
+
+.barra-insatisfecho {
+  fill: var(--btn-rojo);
+}
+
+.dashboard-recientes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.dashboard-recientes-item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--e-2);
+  font-size: 0.9rem;
+  padding-bottom: var(--e-1);
+  border-bottom: 1px solid var(--borde);
+  color: var(--texto-suave);
+}
+
+.dashboard-cargando {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
