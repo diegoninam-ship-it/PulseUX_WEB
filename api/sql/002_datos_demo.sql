@@ -60,6 +60,12 @@ BEGIN
                + (minuto_elegido || ' minutes')::interval
                + (segundo_elegido || ' seconds')::interval;
 
+      -- El día de hoy no debe sembrar horas futuras: si el seed se corre a media
+      -- mañana, la curva de horario comercial no debe adelantarse al reloj real.
+      IF marca > now() THEN
+        CONTINUE;
+      END IF;
+
       INSERT INTO registros (dispositivo_id, opcion, creado_en)
       VALUES (dispositivo, opcion_elegida, marca);
     END LOOP;
