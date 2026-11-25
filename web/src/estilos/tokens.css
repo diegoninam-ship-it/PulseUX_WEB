@@ -1,0 +1,30 @@
+:root {
+  /* superficie */
+  --fondo:            #0B1220;
+  --superficie:       #111A2B;
+  --superficie-alta:  #1A2639;
+  --borde:            #243349;
+
+  /* texto */
+  --texto:            #E8EEF7;
+  --texto-suave:      #97A6BD;
+
+  /* marca */
+  --marca-cian:       #22D3EE;
+  --marca-verde:      #4ADE80;
+  --marca-degradado:  linear-gradient(135deg, #22D3EE, #4ADE80);
+
+  /* botones del dispositivo — colores reales del hardware, no decorativos */
+  --btn-verde:        #22C55E;
+  --btn-amarillo:     #EAB308;
+  --btn-rojo:         #EF4444;
+
+  /* tipografía */
+  --fuente: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* espaciado */
+  --e-1: 0.5rem;  --e-2: 1rem;   --e-3: 1.5rem;
+  --e-4: 2.5rem;  --e-5: 4rem;   --e-6: 6rem;
+
+  --radio: 14px;
+}
